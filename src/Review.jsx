@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-// import {Link, navigate} from '@reach/router'
 import {Form} from 'react-bootstrap';
 import {api} from './API';
 
@@ -30,11 +29,11 @@ class Review extends Component {
 			<h3>Product Review</h3>
 
 			<Form.Group controlId="formGridFile">
-					<Form.Label>Comment: {review.comment }
-					</Form.Label>
+				<Form.Label>Comment: {review.comment }
+				</Form.Label>
 			</Form.Group>
 			<Form.Group controlId="formGridFile">
-					<Form.Label>
+				<Form.Label>
                     Rating:
                         {(() => {
                         switch (review.rating) {
@@ -46,20 +45,12 @@ class Review extends Component {
                         default:      return "";
                         }
                     })()}
-					</Form.Label>
+				</Form.Label>
 			</Form.Group>
 			<Form.Group controlId="formGridFile">
-                    <Form.Label>Review by: {review.user ? review.user.name : null}
-                
-					</Form.Label>
+                <Form.Label>Review by: {review.user ? review.user.name : null}</Form.Label>
 			</Form.Group>
-
-			{/* <Button
-                            className="AddButton"
-                            data-reviewid={review.id}
-                            onClick={this.handleTrashClick}>Delete</Button> */}
 		</Form>
-
         )
     }
 }

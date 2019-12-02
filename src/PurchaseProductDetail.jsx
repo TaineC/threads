@@ -19,60 +19,48 @@ class PurchaseProductDetail extends Component {
 
   routeGetProduct = (id) => {
     api.getProduct(id).then(res => {
-        this.setState({product:res.data})
-        api.getUser(res.data.seller_id).then(res=>{
-            this.setState({seller:res.data})
-        })
-        
+    this.setState({product:res.data})
+      api.getUser(res.data.seller_id).then(res=>{
+        this.setState({seller:res.data})
+      }) 
     })
-}
+  }
 
-componentDidMount(){
+  componentDidMount(){
     var {id} = this.props;
     this.routeGetProduct(id);
-    
-}
+  }
 
   render(){
     var {name, price, photos, id} = this.props;
     var {seller} = this.state;
 
     return seller ? (
-      
-
       <div className="Item userItem">
- 
         <Media className="line">
-            
-         
-
-            <img
+          <img
             width={64}
             height={64}
             className="mr-3"
             src={server+photos[0]}
             alt="product photos"
-            />
+          />
 
-            <Col>   
-              <h5><Link to={'/products/'+id}>{name}</Link></h5>
-              <p className="price">${price}</p>
-            </Col>
-            <Col>              
-              
-                {seller.deleted_at != null? 
-                <Button variant="primary" type="submit"> 
-                <Link to={'/not-found'}>Review</Link>
-                </Button> 
-                :<Button variant="primary" type="submit"> 
-                <Link to={'/review-products/'+id}>   Review </Link>
-                </Button>}
-              
-            </Col>
-        
+          <Col>   
+            <h5><Link to={'/products/'+id}>{name}</Link></h5>
+            <p className="price">${price}</p>
+          </Col>
+          <Col>              
+            {seller.deleted_at != null? 
+            <Button variant="primary" type="submit"> 
+              <Link to={'/not-found'}>Review</Link>
+            </Button> 
+            :<Button variant="primary" type="submit"> 
+              <Link to={'/review-products/'+id}>   Review </Link>
+            </Button>}
+          </Col>
         </Media>
-       
-    </div>
+      </div>
     ): null;
   }
 }

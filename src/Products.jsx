@@ -1,15 +1,9 @@
 import React, {Component} from 'react';
 import Product from './UserProduct';
-import RouteProductDetailsReview from './RouteProductDetailsReview';
-import {Router, Link, navigate} from '@reach/router';
-import {api} from './API';
-import {
-  Card,
-  Button,
-} from 'react-bootstrap';
+import {Link} from '@reach/router';
+import {Button} from 'react-bootstrap';
 
 import './App.css';
-
 
 class Products extends Component{
   constructor(props){
@@ -18,8 +12,6 @@ class Products extends Component{
       products: []
     }
   }
-
-  
 
   render(){
     var {products} = this.state;

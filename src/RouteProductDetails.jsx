@@ -20,7 +20,6 @@ class RouteProductDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            // currentUser: {},
             mLogin: false,
             mCreditCard: false,
             product:{},

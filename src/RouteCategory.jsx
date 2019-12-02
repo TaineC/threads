@@ -9,12 +9,10 @@ import {
 class RouteCat extends Component {
     constructor(props) {
         super(props);
-            this.state = {
-                category:null
-            }
+        this.state = {
+            category:null
+        }
     }
-
-
 
     routeGetCat = (id) => {
         api.getCategory(id).then(res => this.setState({category:res.data}))
@@ -38,7 +36,7 @@ class RouteCat extends Component {
         
         return category ? (
             <Container className="categoryContainer">
-                <Row className="noListing"><h6>Sorry, there are currently 0 listings under <p>{category.name}</p> </h6></Row>
+                <Row className="noListing"><h6>Sorry, there are currently 0 listings under<p>{category.name}</p></h6></Row>
                 <Row className="productsListing">
                 
                     {

@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-// import {Link, navigate} from '@reach/router';
-import Review from './Review';
 import {api, server} from './API';
 
 class ProductDetails extends Component{
@@ -16,7 +14,6 @@ class ProductDetails extends Component{
 
   componentDidMount(){
     var {id} = this.props
-    //console.log(id);
     this.routeGetProduct(id)
   }
   handleReviewFormSubmit = (e) => {
@@ -30,7 +27,6 @@ class ProductDetails extends Component{
       comment:formData.get('comment-input'),
       rating:formData.get('rating-input'),
       prod_id: productId,
-      // user_id: this.props.currentUser.id
     }
     api.addReview(data).then(res => {
       this.reviewForm.reset()
@@ -57,16 +53,12 @@ class ProductDetails extends Component{
           product.reviews.map(review => {
             var reviewProps = {
               review:review,
-              // currentUser:currentUser,
               refreshData: () => this.routeGetProduct(product.id)
             }
-            // return <Review  {...reviewProps} />
           })
         }
       </div>
-      
     </>) : null;
-    
   }
 }
 

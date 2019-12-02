@@ -24,7 +24,6 @@ class EditProduct extends Component{
 		})
 	}
 	
-	
 	submitForm = (e) => {
 
 		e.preventDefault();
@@ -59,19 +58,15 @@ class EditProduct extends Component{
 
     return(
 		
-	  
-		
-		<Form className="productForm" onSubmit={this.submitForm} ref={(el) => {this.form = el}}>
+	<Form className="productForm" onSubmit={this.submitForm} ref={(el) => {this.form = el}}>
         <h3>Edit your product</h3>
         <Form.Row>
             <Form.Group as={Col} controlId="formGridName">
-				
-                <Form.Control type="text" className="form-control" name="name-input" id="name-input" defaultValue={name}/>
+				<Form.Control type="text" className="form-control" name="name-input" id="name-input" defaultValue={name}/>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridPrice" className="formGridPrice">
-
-                $ <Form.Control type="currency" className="form-control" name="price-input" id="price-input" defaultValue={price}/>
+				$ <Form.Control type="currency" className="form-control" name="price-input" id="price-input" defaultValue={price}/>
             </Form.Group>
         </Form.Row>
 
@@ -81,9 +76,7 @@ class EditProduct extends Component{
         <Form.Group controlId="formGridFile">
             <Form.Control type="file" className="form-control" name="photo-input" id="photo-input" placeholder="Add photo" multiple/>
         </Form.Group>
-        <Button variant="primary" type="submit">
-            Update Product
-        </Button>
+        <Button variant="primary" type="submit">Update Product</Button>
     </Form>
     );
   }

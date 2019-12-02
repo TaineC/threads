@@ -3,72 +3,58 @@ import { FiChevronUp } from "react-icons/fi";
 import { MdHome } from "react-icons/md";
 import ScrollUpButton from "react-scroll-up-button"; //Add this line Here
 
-import {
-    Navbar,
-    Col,
-    Container
-  } from 'react-bootstrap';
-  import {navigate} from '@reach/router';
-  import classnames from "classnames";
+import {Navbar,Col,Container} from 'react-bootstrap';
+import {navigate} from '@reach/router';
+import classnames from "classnames";
 
 class Footer extends Component{
-    constructor(props) {
-        super(props);
-        this.state ={
-            prevScrollpos: window.pageYOffset,
-            visible: true
-        }
+  constructor(props) {
+    super(props);
+    this.state ={
+      prevScrollpos: window.pageYOffset,
+      visible: true
     }
+  }
     
-    componentDidMount(){
-      window.addEventListener("scroll", this.handleScroll);
+  componentDidMount(){
+    window.addEventListener("scroll", this.handleScroll);
+  }
 
-    }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll);
+  }
 
-    componentWillUnmount() {
-        window.removeEventListener("scroll", this.handleScroll);
-      }
-
-
-    handleScroll = () => {
-        const { prevScrollpos } = this.state;
+  handleScroll = () => {
+    const { prevScrollpos } = this.state;
       
-        const currentScrollPos = window.pageYOffset;
-        const visible = prevScrollpos > currentScrollPos;
+    const currentScrollPos = window.pageYOffset;
+    const visible = prevScrollpos > currentScrollPos;
       
-        this.setState({
-          prevScrollpos: currentScrollPos,
-          visible
-        });
-    };
+    this.setState({
+      prevScrollpos: currentScrollPos,
+      visible
+    });
+  };
 
-    goHome = (e) => {
-      e.preventDefault();
-      navigate("/")
+  goHome = (e) => {
+    e.preventDefault();
+    navigate("/")
   } 
 
-    
-
-
-render () {
+  render () {
     return (
-        <Navbar sticky="bottom" className={classnames("footer", {
-          "footer--hidden": !this.state.visible
-        })}>
+      <Navbar sticky="bottom" className={classnames("footer", {"footer--hidden": !this.state.visible})}>
         <Container>
-
           <Col className="lCol">threads</Col><Col onClick={this.goHome} className="cCol linkColor"><MdHome/>
-          </Col><Col className="rCol linkColor"><ScrollUpButton ContainerClassName="ScrollUpButton__Container" TransitionClassName="ScrollUpButton__Toggled">
-            <FiChevronUp/>
-          </ScrollUpButton></Col>
-
+            </Col><Col className="rCol linkColor"><ScrollUpButton ContainerClassName="ScrollUpButton__Container" TransitionClassName="ScrollUpButton__Toggled">
+              <FiChevronUp/>
+            </ScrollUpButton></Col>
         </Container>
-        </Navbar>
-
+      </Navbar>
     );
+  }
 }
 
-}
 export default Footer;
 
 

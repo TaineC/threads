@@ -8,8 +8,6 @@ import {
     Container
 } from 'react-bootstrap';
 
-
-
 class RouteProductSearch extends Component {
     constructor(props) {
       super(props);
@@ -17,44 +15,39 @@ class RouteProductSearch extends Component {
         data: [],
         searchTerm: ''
       };
-
     }
-
 
     getProducts = () => {
         api.getProducts().then(res => {
-                this.setState({data:res.data})
-            })
+        this.setState({data:res.data})
+      })
     }
 
     componentDidMount() {
-        this.getProducts()
+      this.getProducts()
     }
 
+    handleInput = (e) => {
+      console.log(e.target.value);
+      this.setState({searchTerm: e.target.value})
+    };
 
-      handleInput = (e) => {
-          console.log(e.target.value);
-        this.setState({searchTerm: e.target.value})
-      };
+  render() {
+    let searchResults = this.state.data.filter((item) => {
+      return item.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    })
+    return (
+      <Container className="searchList">
+        <Row className="searchBox">
+          <SearchBox handleInput={this.handleInput}/>
+        </Row>
+        <Row className="searchResults">  
+          <SearchResults searchedItems={searchResults}/>
+          <Container className="noResults">Sorry, there are no products that match your search term</Container>
+          </Row>
+        </Container>   
+    );
+  }
+}
 
-      render() {
-        let searchResults = this.state.data.filter((item) => {
-            return item.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
-        })
-        return (
-
-            <Container className="searchList">
-                <Row className="searchBox">
-                <SearchBox handleInput={this.handleInput}/>
-                </Row>
-                <Row className="searchResults">  
-                <SearchResults searchedItems={searchResults}/>
-                <Container className="noResults">Sorry, there are no products that match your search term</Container>
-                </Row>
-            </Container>
-            
-        );
-      }
-    }
-
-    export default RouteProductSearch;
+export default RouteProductSearch;
