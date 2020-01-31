@@ -10,7 +10,7 @@ import {
     Image,
     Carousel,
 } from 'react-bootstrap';
-import {api, server} from './API';
+import {api, server} from '../API';
 import Modal from 'react-awesome-modal';
 import TextValidator from './TextValidator';
 import { ValidatorForm } from 'react-form-validator-core';
@@ -96,7 +96,7 @@ class RouteProductDetails extends Component {
 
     addDefaultSrc(ev){
         ev.target.src = '/coming-soon.png'
-      }
+    }
 
     render() {
         var {name,description,price,photos} = this.state.product;
@@ -119,7 +119,7 @@ class RouteProductDetails extends Component {
                         <Col className="productDetailsInfo">
                         <Card.Text className="productDesc">{description}</Card.Text>
                         <Card.Text className="productPrice">$ {price}
-                            {user? (user && user.id!=seller.id? 
+                            {user? (user && user.id!==seller.id? 
                                 ( <Form className="purchaseForm" onSubmit={() => this.openCreditModal()} ref={(el) => {this.form = el}} >
                                             < Button onClick = {() => this.openCreditModal()}className = "purchaseButton" name = "purchase" variant = "outline-dark" > Purchase</Button></Form>
                                     ) : null

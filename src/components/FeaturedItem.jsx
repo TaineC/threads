@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import RouteProductDetails from './RouteProductDetails';
 import {Link, navigate} from '@reach/router';
-import {api, server} from './API';
+import {api, server} from '../API';
 import {Card, Button, ListGroup} from 'react-bootstrap';
 
 class FeaturedItem extends Component {

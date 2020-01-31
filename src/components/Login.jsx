@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {api} from './API';
+import {api} from '../API';
 import TextValidator from './TextValidator';
 import { ValidatorForm } from 'react-form-validator-core';
 import {Accordion,Card,Button,} from 'react-bootstrap';

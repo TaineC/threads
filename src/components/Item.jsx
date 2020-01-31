@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from '@reach/router';
-import {api, server} from './API';
+import {api, server} from '../API';
 import {Card,Col} from 'react-bootstrap';
 
 class Item extends Component{
@@ -38,7 +38,7 @@ class Item extends Component{
               <Card.Text className="itemPrice">${price}</Card.Text>
               <Card.Img variant="top" src={server+photos[0]} onError={this.addDefaultSrc}/> 
               <Card.Body>
-                <Card.Title><Link to={'/products/'+id}>{name}</Link></Card.Title>
+                <Card.Title>{name}</Card.Title>
               </Card.Body>
             </Link>
           </Card>

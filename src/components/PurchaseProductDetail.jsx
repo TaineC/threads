@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from '@reach/router';
-import {api, server} from './API';
+import {api, server} from '../API';
 import {Button,Media,Col} from 'react-bootstrap';
 
 class PurchaseProductDetail extends Component {

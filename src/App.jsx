@@ -1,20 +1,20 @@
 import React, {Component} from 'react';
-import ProductListings from './ProductListings';
-import AddProduct from './AddProduct';
-import EditProduct from './EditProduct';
-import Login from './Login';
-import UserProfile from './UserProfile';
-import UserProducts from './UserProducts';
-import RouteProductDetailsReview from './RouteProductDetailsReview';
-import RouteProductDetails from './RouteProductDetails';
-import PurchaseProductListings from './PurchaseProductListings';
-import RouteCat from './RouteCategory';
-import RouteThanks from './RouteThanks';
-import RouteFeaturedProduct from './RouteFeaturedProduct';
-import Footer from './Footer';
-import RouteProductSearch from './RouteProductSearch';
-import RouteOurStore from './RouteOurStore';
-import RouteErrorPage from './RouteErrorPage';
+import ProductListings from './components/ProductListings';
+import AddProduct from './components/AddProduct';
+import EditProduct from './components/EditProduct';
+import Login from './components/Login';
+import UserProfile from './components/UserProfile';
+import UserProducts from './components/UserProducts';
+import RouteProductDetailsReview from './components/RouteProductDetailsReview';
+import RouteProductDetails from './components/RouteProductDetails';
+import PurchaseProductListings from './components/PurchaseProductListings';
+import RouteCat from './components/RouteCategory';
+import RouteThanks from './components/RouteThanks';
+import RouteFeaturedProduct from './components/RouteFeaturedProduct';
+import Footer from './components/Footer';
+import RouteProductSearch from './components/RouteProductSearch';
+import RouteOurStore from './components/RouteOurStore';
+import RouteErrorPage from './components/RouteErrorPage';
 
 import {Accordion,Nav,Navbar,Container,Card,Image} from 'react-bootstrap';
 import './App.css';
@@ -72,7 +72,7 @@ toggle() {
 }
 
 addDefaultSrc(ev){
-  ev.target.src = '/default.png'
+  ev.target.src = './img/default.png'
 }
 
 componentDidMount = () => {
@@ -118,7 +118,7 @@ render(){
           bg="dark"
           variant="dark">
             <Container className="navBarbot">  
-              <Link to="/"><Image className="Logo" src={require('./logo.png')} fluid="fluid"/></Link>
+              <Link to="/"><Image className="Logo" src={require('./img/logo.png')} fluid="fluid"/></Link>
                 {
                   this.state.currentUser ? null :
                     <><input

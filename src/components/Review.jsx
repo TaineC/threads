@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Form} from 'react-bootstrap';
-import {api} from './API';
+import {api} from '../API';
 
 class Review extends Component {
 

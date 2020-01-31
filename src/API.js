@@ -6,9 +6,7 @@ import axios from 'axios';
 var url = 'http://localhost:4001/api';
 var server = 'http://localhost:4001/';
 
-
 var api = {
-
 
     addProduct : (data) => {
         return axios.post(url+'/products',data)
@@ -58,13 +56,15 @@ var api = {
     getUser : (id) => {
         return axios.get(url+'/users/'+id)
     },
+
     addUser: (data) => {
        return axios.post(url+'/users/',data)
     },
 
     updateUser: (id,data) => {
         return axios.put(url+'/users/'+id,data)
-     },
+    },
+
     deleteUser: (id) => {
         return axios.delete(url+'/users/'+id)
     },
@@ -72,12 +72,6 @@ var api = {
     addReview : (data) => {
         return axios.post(url+'/reviews',data)
     },
-    
-
 }
-
-
-
-
 
 export {server, api}

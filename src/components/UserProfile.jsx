@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import UserProducts from './UserProducts';
 import PurchaseProductListings from './PurchaseProductListings';
-import {api, server} from './API';
+import {api, server} from '../API';
 import Modal from 'react-awesome-modal';
 import SellerReviewProducts from './SellerReviewProducts';
 import {
@@ -85,7 +85,7 @@ class UserProfile extends Component {
 
   componentDidUpdate(prevProps){
     var {id} =  this.props
-    if(prevProps.id != id){
+    if(prevProps.id !== id){
       this.getUserProfile(this.props.id)
       this.setState({currentUser:this.props.user})
       }
@@ -108,28 +108,28 @@ class UserProfile extends Component {
               <Col xs={5}>
                 <Image src={server+this.state.fileName}  thumbnail={true}/>
               </Col>
-              <Form className="userProfile" onChange={this.handlePhotoSubmit} ref={(el) => {this.userForm = el}}>
+              <Form.Group className="userProfile" onChange={this.handlePhotoSubmit} ref={(el) => {this.userForm = el}}>
                 <Form.Group controlId="formPhoto">
 				          <input type="file" className="photo-input" name="Userphoto-input" id="Userphoto-input" placeholder="Change your photo"/>
                 </Form.Group>
-              </Form>
+              </Form.Group>
                
               <Form.Group  controlId="formGridName">
                 <Col>
                   <Form.Control type="text" defaultValue={this.state.user.name} name="name-input"/>
                 </Col>
               </Form.Group>
-              <Form.Group controlId="formGridPassword">
+              <Form.Group controlId="formGridCurrentPassword">
                 <Col>
                   <Form.Control type="password" placeholder="Current Password" name="password-input"/>
                 </Col>
               </Form.Group>
-              <Form.Group controlId="formGridPassword">
+              <Form.Group controlId="formGridNewPassword">
                 <Col>
                   <Form.Control type="password" placeholder="New Password" name="password-input"/>
                 </Col>
               </Form.Group>
-              <Form.Group controlId="formGridPassword">
+              <Form.Group controlId="formGridConfirmPassword">
                 <Col>
                   <Form.Control type="password" placeholder="Confirm Password" name="password-input"/>
                 </Col>
@@ -149,7 +149,7 @@ class UserProfile extends Component {
           <Row className="userImageUpdate" className="userAdminDetails">
             <Col xs={5} md={1}>
               <Image src={server+this.state.fileName} thumbnail={true}/>
-                {user.id == currentUser.id?(<input
+                {user.id === currentUser.id?(<input
                   className="editImgButton"
                   type="button"
                   value="Edit"
@@ -172,7 +172,7 @@ class UserProfile extends Component {
             <Tab eventKey="Reviews" title="Reviews">
               <SellerReviewProducts user={this.state.user}/>
             </Tab>
-            {user.id == currentUser.id?
+            {user.id === currentUser.id?
             <Tab eventKey="Purchases" title="Purchases" >
               <PurchaseProductListings user={this.state.user}/>
             </Tab>:null}

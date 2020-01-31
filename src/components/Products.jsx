@@ -3,7 +3,7 @@ import Product from './UserProduct';
 import {Link} from '@reach/router';
 import {Button} from 'react-bootstrap';
 
-import './App.css';
+import '../App.css';
 
 class Products extends Component{
   constructor(props){

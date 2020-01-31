@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {api} from './API';
+import {api} from '../API';
 import SearchResults from './SearchResults';
 import SearchBox from './SearchBox';
 

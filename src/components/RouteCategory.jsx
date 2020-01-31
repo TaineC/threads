@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Item from './Item';
-import {api} from './API';
+import {api} from '../API';
 import {
     Container,
     Row,
@@ -26,7 +26,7 @@ class RouteCat extends Component {
     componentDidUpdate(prevProps, prevState){
         var {id} = this.props
         
-        if (id != prevProps.id){
+        if (id !== prevProps.id){
             this.routeGetCat(id)
         }
     }

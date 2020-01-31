@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {api, server} from './API';
+import {api, server} from '../API';
 
 class ProductDetails extends Component{
   constructor(props){

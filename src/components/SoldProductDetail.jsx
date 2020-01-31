@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Link} from '@reach/router';
-import {api} from './API';
+import {api} from '../API';
 import {Media} from 'react-bootstrap';
 
-import './App.css';
+import '../App.css';
 
 class SoldProductDetail extends Component {
   constructor(props){

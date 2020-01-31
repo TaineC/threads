@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {navigate} from '@reach/router';
-import {api} from './API';
+import {api} from '../API';
 
 import {
 	Col,
@@ -62,19 +62,19 @@ class EditProduct extends Component{
         <h3>Edit your product</h3>
         <Form.Row>
             <Form.Group as={Col} controlId="formGridName">
-				<Form.Control type="text" className="form-control" name="name-input" id="name-input" defaultValue={name}/>
+				<Form.Control type="text" className="form-control" name="name-input" controlId="name-input" defaultValue={name}/>
             </Form.Group>
 
             <Form.Group as={Col} controlId="formGridPrice" className="formGridPrice">
-				$ <Form.Control type="currency" className="form-control" name="price-input" id="price-input" defaultValue={price}/>
+				$ <Form.Control type="currency" className="form-control" name="price-input" controlId="price-input" defaultValue={price}/>
             </Form.Group>
         </Form.Row>
 
         <Form.Group controlId="formGridDescription">
-            <Form.Control type="text" className="form-control" name="description-input" id="description-input" defaultValue={description}/>
+            <Form.Control type="text" className="form-control" name="description-input" controlId="description-input" defaultValue={description}/>
         </Form.Group>
         <Form.Group controlId="formGridFile">
-            <Form.Control type="file" className="form-control" name="photo-input" id="photo-input" placeholder="Add photo" multiple/>
+            <Form.Control type="file" className="form-control" name="photo-input" controlId="photo-input" placeholder="Add photo" multiple/>
         </Form.Group>
         <Button variant="primary" type="submit">Update Product</Button>
     </Form>

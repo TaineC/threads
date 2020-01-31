@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {navigate} from '@reach/router';
-import {api} from './API';
+import {api} from '../API';
 
 import {
 	Button,
 	Form
   } from 'react-bootstrap';
 
-import './App.css';
+import '../App.css';
 
 class AddProduct extends Component{
 

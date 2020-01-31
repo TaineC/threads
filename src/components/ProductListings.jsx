@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Item from './Item';
 import {Link} from '@reach/router';
-import {api} from './API';
+import {api} from '../API';
 import Carousel from 'react-multi-carousel';
 import {
     Col,
@@ -74,7 +74,7 @@ class ProductListings extends Component {
                         : false} autoPlaySpeed={1000} keyBoardControl={true} customTransition="ease all .5s" transitionDuration={500} containerClass="carousel-container" removeArrowOnDeviceType={["tablet", "mobile"]} deviceType={this.props.deviceType} dotListClass="custom-dot-list-style" itemClass="CarousalItem carousel-item-padding-40-px" partialVisbile={true}>
                     <div className="Item">
                         <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('./suit1.png')}/></Link>
+                        <Link to="/featured"><Card.Img variant="featured" src={require('../img/suit1.png')}/></Link>
                             <Card.Body>
                                 <Card.Title>Dries Van Noten Pin Stripe
                                 </Card.Title>
@@ -84,7 +84,7 @@ class ProductListings extends Component {
                     </div>
                     <div className="Item">
                         <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('./watch1.png')}/></Link>
+                        <Link to="/featured"><Card.Img variant="featured" src={require('../img/watch1.png')}/></Link>
                             <Card.Body>
                                 <Card.Title>Lorem ipsum dolor
                                 </Card.Title>
@@ -94,7 +94,7 @@ class ProductListings extends Component {
                     </div>
                     <div className="Item">
                         <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('./suit2.png')}/></Link>
+                        <Link to="/featured"><Card.Img variant="featured" src={require('../img/suit2.png')}/></Link>
                             <Card.Body>
                                 <Card.Title>Ut ut gravida augue
                                 </Card.Title>
@@ -104,7 +104,7 @@ class ProductListings extends Component {
                     </div>
                     <div className="Item">
                         <Card>
-                            <Card.Img variant="featured" src={require('./footwear1.png')}/>
+                            <Card.Img variant="featured" src={require('../img/footwear1.png')}/>
                             <Card.Body>
                                 <Card.Title>Curabitur vitae
                                 </Card.Title>
@@ -114,7 +114,7 @@ class ProductListings extends Component {
                     </div>
                     <div className="Item">
                         <Card>
-                            <Card.Img variant="featured" src={require('./suit3.png')}/>
+                            <Card.Img variant="featured" src={require('../img/suit3.png')}/>
                             <Card.Body>
                                 <Card.Title>Suspendisse massa
                                 </Card.Title>
@@ -124,7 +124,7 @@ class ProductListings extends Component {
                     </div>
                     <div className="Item">
                         <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('./watch2.png')}/></Link>
+                        <Link to="/featured"><Card.Img variant="featured" src={require('../img/watch2.png')}/></Link>
                             <Card.Body>
                                 <Card.Title>Sed vel consequat ligula
                                 </Card.Title>
@@ -134,7 +134,7 @@ class ProductListings extends Component {
                     </div>
                     <div className="Item">
                         <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('./footwear2.png')}/></Link>
+                        <Link to="/featured"><Card.Img variant="featured" src={require('../img/footwear2.png')}/></Link>
                             <Card.Body>
                                 <Card.Title>Aliquam egestas
                                 </Card.Title>
@@ -144,7 +144,7 @@ class ProductListings extends Component {
                     </div>
                     <div className="Item">
                         <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('./suit4.png')}/></Link>
+                        <Link to="/featured"><Card.Img variant="featured" src={require('../img/suit4.png')}/></Link>
                             <Card.Body>
                                 <Card.Title>Praesent quis est
                                 </Card.Title>
@@ -154,7 +154,7 @@ class ProductListings extends Component {
                     </div>
                     <div className="Item">
                         <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('./footwear3.png')}/></Link>
+                        <Link to="/featured"><Card.Img variant="featured" src={require('../img/footwear3.png')}/></Link>
                             <Card.Body>
                                 <Card.Title>Interdum et malesuada
                                 </Card.Title>
@@ -164,7 +164,7 @@ class ProductListings extends Component {
                     </div>
                     <div className="Item">
                         <Card>
-                        <Link to="/featured"><Card.Img variant="featured" src={require('./watch3.png')}/></Link>
+                        <Link to="/featured"><Card.Img variant="featured" src={require('../img/watch3.png')}/></Link>
                             <Card.Body>
                                 <Card.Title>Sed ligula risus
                                 </Card.Title>
