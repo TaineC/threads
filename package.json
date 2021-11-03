@@ -23,7 +23,7 @@
     "react-svg-buttons": "^0.4.0",
     "reactstrap": "^8.0.1",
     "sass-google-fonts": "^1.0.1",
-    "validator": "^11.1.0"
+    "validator": "^13.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
